@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>下載快手</title>
+    <script language="javascript" type="text/javascript">
+    function checkOS() {
+      var defaultUrl = 'http://bit.ly/k-official';
+      var androidUrl = 'http://bit.ly/k-android';
+      var iphoneUrl = 'http://bit.ly/k-ios';
+      var url = '';
+      var ua = (navigator.userAgent || navigator.vendor || window.opera);
+      if (ua!=null) {
+        var uaName = ua.toLowerCase();
+        if (/android/i.test(uaName)){url = androidUrl;}
+        else if(/ip(hone|od)/i.test(uaName)) {url = iphoneUrl;}
+        else {url = defaultUrl;}
+        window.location.href = url;
+      }// if ua!=null
+    }//checkOS
+    </script>
+  </head>
+  <body onload='checkOS();'>
+  </body>
+</html>
